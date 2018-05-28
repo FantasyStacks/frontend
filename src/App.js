@@ -1,10 +1,10 @@
 import React, { Component } from 'react' 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import LandingPage from './containers/LandingPage' 
-import ProfilePage from './containers/ProfilePage' 
-import HelpPage from './containers/HelpPage' 
-import BuilderPage from './containers/BuilderPage' 
+import LandingPage from './pages/LandingPage' 
+import ProfilePage from './pages/ProfilePage' 
+import HelpPage from './pages/HelpPage' 
+import BuilderPage from './pages/BuilderPage' 
 
 
 export default class App extends Component {
