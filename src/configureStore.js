@@ -7,23 +7,27 @@ import { createLogger } from 'redux-logger'
 
 import rootReducer from './reducers'
 
-const initialState = {};
-
 const getMiddleware = () => {
-  const middleware = [promise(), thunk];
-  const devMiddleware = [...middleware, createLogger()];
+  const middleware = [promise(), thunk]
+  const devMiddleware = [...middleware, createLogger()]
 
   if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
     return composeWithDevTools(applyMiddleware(...devMiddleware));
   } else {
     return applyMiddleware(...middleware)
   }
-};
+}
 
-const store = createStore(
-  rootReducer,
-  initialState, 
-  getMiddleware()
-);
+const configureStore = () => {
+  const initialState = {}
 
-export default store
+  const store = createStore(
+    rootReducer,
+    initialState, 
+    getMiddleware()
+  )
+  
+  return store
+}
+
+export default configureStore
