@@ -1,0 +1,19 @@
+.playerpicker {
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+.playerpicker-positions {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+.playerpicker-headings {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.playerpicker-playerpool {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}

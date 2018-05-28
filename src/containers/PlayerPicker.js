@@ -1,6 +1,9 @@
 import React, { Component } from 'react' 
 import PropTypes from 'prop-types' 
 
+import './PlayerPicker.css' 
+
+
 class PlayerPicker extends Component {
   render() {
     return (
