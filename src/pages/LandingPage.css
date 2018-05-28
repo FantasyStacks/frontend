@@ -1,0 +1,40 @@
+.landing {
+  display: grid;
+  grid-gap: 0px;
+}
+
+.top {
+  display: grid;
+  height: 100vh;
+  background-color: blue;
+}
+
+.about {
+  display: grid;
+  height: 100vh;
+  background-color: red;
+}
+
+.feature1 {
+  display: grid;
+  height: 100vh;
+  background-color: orange;
+}
+
+.feature2 {
+  display: grid;
+  height: 100vh;
+  background-color: yellow;
+}
+
+.feature3 {
+  display: grid;
+  height: 100vh;
+  background-color: gray;
+}
+
+.action {
+  display: grid;
+  height: 100vh;
+  background-color: purple;
+}

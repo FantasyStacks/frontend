@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import PropTypes from 'prop-types' 
 
+import './GamesBar.css' 
 
 class GamesBar extends Component {
   render() {
@@ -11,11 +12,9 @@ class GamesBar extends Component {
         </div>
         <div className="gamesbar-game">
           <div className="gamesbar-team">MIN</div>
-          <div className="gamesbar-team">ATL</div>
           <div className="gamesbar-time">4:00</div>
-          <div className="gamesbar-vegas">vegas info</div>
-          <div className="gamesbar-pace">pace info</div>
-          <div className="gamesbar-stack">stack the game</div>
+          <div className="gamesbar-vegas">97.1</div>
+          <div className="gamesbar-pace">101</div>
         </div>
       </div>
     )

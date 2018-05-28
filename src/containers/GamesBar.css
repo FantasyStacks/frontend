@@ -1,0 +1,28 @@
+.gamesbar {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.gamesbar-game {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+}
+
+.gamesbar-team {
+  grid-column: 1 / 2;
+}
+
+.gamesbar-time {
+  grid-column: 1 / 2;
+}
+
+.gamesbar-vegas {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.gamesbar-pace {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
