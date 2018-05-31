@@ -1,11 +1,13 @@
 .playerpicker {
   display: grid;
   grid-template-rows: auto auto auto auto;
+  background-color: orangered;
 }
 
 .playerpicker-positions {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+  background-color: gray;
 }
 
 .playerpicker-headings {

@@ -1,0 +1,25 @@
+.lineup {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto;
+  background-color: orange;
+}
+
+.lineup-top {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.lineup-col-header {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.lineup-players {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.lineup-totals {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}

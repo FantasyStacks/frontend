@@ -1,6 +1,7 @@
 import React, { Component } from 'react' 
 import PropTypes from 'prop-types' 
 
+import './Lineup.css'
 
 class Lineup extends Component {
   render() {

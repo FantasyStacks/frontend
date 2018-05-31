@@ -1,4 +1,7 @@
 .navbar {
   display: grid;
   grid-template-columns: auto auto auto auto auto;
+  grid-column: 1 / -1;
+  background-color: orchid;
+  height: 30px;
 }
