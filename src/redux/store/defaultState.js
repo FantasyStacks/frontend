@@ -1,11 +1,11 @@
 import dcopy from 'deepcopy';
-import playerPool from '../../playerpool.js';
+import { playerPool } from '../../playerpool.js';
 
 export const games = playerPool.reduce((games, player) => {
-  const teams = player.Game.split('@');
-  games[teams[0]] = teams[1];
-  return games;
-}, {});
+  const teams = player.Game.split('@')
+  games[teams[0]] = teams[1]
+  return games
+}, {})
 
 export const emptyLineup = {
   pg1: null,
@@ -29,5 +29,5 @@ export const defaultState = {
     pos: [],
     team: []
   }
-};
+}
 

@@ -1,130 +1,130 @@
-import dcopy from 'deepcopy';
+import dcopy from 'deepcopy'
 
 export const addRemove = (lineup, player) => {
   if (inLineup(lineup, player)) {
-    return removePlayer(lineup, player);
+    return removePlayer(lineup, player)
   } else {
-    return addPlayer(lineup, player);
+    return addPlayer(lineup, player)
   }
-};
+}
 
 const inLineup = (lineup, player) => {
-  const nickname = player.Nickname;
+  const nickname = player.Nickname
 
   switch (player.Position) {
     case 'PG':
       if (lineup.pg1 && lineup.pg1.Nickname === nickname) {
-        return true;
+        return true
       } else if (lineup.pg2 && lineup.pg2.Nickname === nickname) {
-        return true;
+        return true
       }
-      break;
+      break
     case 'SG':
       if (lineup.sg1 && lineup.sg1.Nickname === nickname) {
-        return true;
+        return true
       } else if (lineup.sg2 && lineup.sg2.Nickname === nickname) {
-        return true;
+        return true
       }
-      break;
+      break
     case 'SF':
       if (lineup.sf1 && lineup.sf1.Nickname === nickname) {
-        return true;
+        return true
       } else if (lineup.sf2 && lineup.sf2.Nickname === nickname) {
-        return true;
+        return true
       }
-      break;
+      break
     case 'PF':
       if (lineup.pf1 && lineup.pf1.Nickname === nickname) {
-        return true;
+        return true
       } else if (lineup.pf2 && lineup.pf2.Nickname === nickname) {
-        return true;
+        return true
       }
-      break;
+      break
     case 'C':
       if (lineup.c1 && lineup.c1.Nickname === nickname) {
-        return true;
+        return true
       }
-      break;
+      break
   }
-  return false;
-};
+  return false
+}
 
 const addPlayer = (lineup, player) => {
   switch (player.Position) {
     case 'PG':
       if (lineup.pg1 === null) {
-        return Object.assign(dcopy(lineup), {pg1: player});
+        return Object.assign(dcopy(lineup), {pg1: player})
       } else if (lineup.pg2 === null) {
-        return Object.assign(dcopy(lineup), {pg2: player});
+        return Object.assign(dcopy(lineup), {pg2: player})
       }
-      break;
+      break
     case 'SG':
       if (lineup.sg1 === null) {
-        return Object.assign(dcopy(lineup), {sg1: player});
+        return Object.assign(dcopy(lineup), {sg1: player})
       } else if (lineup.sg2 === null) {
-        return Object.assign(dcopy(lineup), {sg2: player});
+        return Object.assign(dcopy(lineup), {sg2: player})
       }
-      break;
+      break
     case 'SF':
       if (lineup.sf1 === null) {
-        return Object.assign(dcopy(lineup), {sf1: player});
+        return Object.assign(dcopy(lineup), {sf1: player})
       } else if (lineup.sf2 === null) {
-        return Object.assign(dcopy(lineup), {sf2: player});
+        return Object.assign(dcopy(lineup), {sf2: player})
       }
-      break;
+      break
     case 'PF':
       if (lineup.pf1 === null) {
-        return Object.assign(dcopy(lineup), {pf1: player});
+        return Object.assign(dcopy(lineup), {pf1: player})
       } else if (lineup.pf2 === null) {
-        return Object.assign(dcopy(lineup), {pf2: player});
+        return Object.assign(dcopy(lineup), {pf2: player})
       }
-      break;
+      break
     case 'C':
       if (lineup.c1 === null) {
-        return Object.assign(dcopy(lineup), {c1: player});
+        return Object.assign(dcopy(lineup), {c1: player})
       }
-      break;
+      break
   }
-  return lineup;
-};
+  return lineup
+}
 
 const removePlayer = (lineup, player) => {
-  const nickname = player.Nickname;
+  const nickname = player.Nickname
 
   switch (player.Position) {
     case 'PG':
       if (lineup.pg1 && lineup.pg1.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {pg1: null});
+        return Object.assign(dcopy(lineup), {pg1: null})
       } else if (lineup.pg2 && lineup.pg2.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {pg2: null});
+        return Object.assign(dcopy(lineup), {pg2: null})
       }
       break;
     case 'SG':
       if (lineup.sg1 && lineup.sg1.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {sg1: null});
+        return Object.assign(dcopy(lineup), {sg1: null})
       } else if (lineup.sg2 && lineup.sg2.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {sg2: null});
+        return Object.assign(dcopy(lineup), {sg2: null})
       }
-      break;
+      break
     case 'SF':
       if (lineup.sf1 && lineup.sf1.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {sf1: null});
+        return Object.assign(dcopy(lineup), {sf1: null})
       } else if (lineup.sf2 && lineup.sf2.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {sf2: null});
+        return Object.assign(dcopy(lineup), {sf2: null})
       }
-      break;
+      break
     case 'PF':
       if (lineup.pf1 && lineup.pf1.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {pf1: null});
+        return Object.assign(dcopy(lineup), {pf1: null})
       } else if (lineup.pf2 && lineup.pf2.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {pf2: null});
+        return Object.assign(dcopy(lineup), {pf2: null})
       }
-      break;
+      break
     case 'C':
       if (lineup.c1 && lineup.c1.Nickname === nickname) {
-        return Object.assign(dcopy(lineup), {c1: null});
+        return Object.assign(dcopy(lineup), {c1: null})
       }
-      break;
+      break
   }
-  return lineup;
-};
+  return lineup
+}

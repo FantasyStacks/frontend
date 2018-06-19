@@ -6,7 +6,7 @@ import { Lineups } from './Lineups.js'
 import { Pool } from './Pool.js'
 import { PoolFilter } from './PoolFilter.js'
 
-const App = ({ gamesBar, poolFilter, lineup, lineups, playerPool, addRemove, filterGame, filterPosition, getLineups, postLineups }) => {
+export const App = ({ gamesBar, poolFilter, lineup, lineups, playerPool, addRemove, filterGame, filterPosition, getLineups, postLineups }) => {
 
   const saveButton = Object.keys(lineup.lineup)
     .map(pos => lineup.lineup[pos])
@@ -50,5 +50,3 @@ const App = ({ gamesBar, poolFilter, lineup, lineups, playerPool, addRemove, fil
     </div>
   )
 }
-
-export default App

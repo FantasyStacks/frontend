@@ -4,12 +4,10 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-const middleware = composeWithDevTools(
+export const middleware = composeWithDevTools(
   applyMiddleware(
     promise(),
     thunk,
     createLogger()
   )
 )
-
-export default middleware

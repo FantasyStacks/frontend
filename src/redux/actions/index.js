@@ -1,10 +1,10 @@
-import { bindActionCreators } from 'redux';
-import axios from 'axios';
-import dcopy from 'deepcopy';
+import { bindActionCreators } from 'redux'
+import axios from 'axios'
+import dcopy from 'deepcopy'
 
-import store from '../store/index.js';
+import { store } from '../store/index.js'
 
-const mapDispatchToProps = (dispatch) => (
+export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({
     postLineups: (lineup) => ({
       type: 'POST_LINEUPS',
@@ -34,6 +34,4 @@ const mapDispatchToProps = (dispatch) => (
     })
 
   }, dispatch)
-);
-
-export default mapDispatchToProps
+)

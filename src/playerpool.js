@@ -1,5 +1,5 @@
 
-const playerPool = [
+export const playerPool = [
 {"Id": "24738-15755", "Position": "PF", "First Name": "Anthony", "Nickname": "Anthony Davis", "Last Name": "Davis", "FPPG": "54.13194444444444", "Played": "72", "Salary": "13000", "Game": "NO@PHO", "Team": "NO", "Opponent": "PHO", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]},
 {"Id": "24738-9488", "Position": "SF", "First Name": "LeBron", "Nickname": "LeBron James", "Last Name": "James", "FPPG": "54.29874877929687", "Played": "80", "Salary": "11400", "Game": "CLE@PHI", "Team": "CLE", "Opponent": "PHI", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]},
 {"Id": "24738-15557", "Position": "C", "First Name": "Andre", "Nickname": "Andre Drummond", "Last Name": "Drummond", "FPPG": "45.087012352881494", "Played": "77", "Salary": "10500", "Game": "DAL@DET", "Team": "DET", "Opponent": "DAL", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]},
@@ -312,5 +312,3 @@ const playerPool = [
 {"Id": "24738-9713", "Position": "PG", "First Name": "Jarrett", "Nickname": "Jarrett Jack", "Last Name": "Jack", "FPPG": "19.953449117726294", "Played": "58", "Salary": "3500", "Game": "MIA@NY", "Team": "NY", "Opponent": "MIA", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]},
 {"Id": "24738-68090", "Position": "SF", "First Name": "OG", "Nickname": "OG Anunoby", "Last Name": "Anunoby", "FPPG": "11.697142682756697", "Played": "70", "Salary": "3500", "Game": "IND@TOR", "Team": "TOR", "Opponent": "IND", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]},
 {"Id": "24738-9725", "Position": "SF", "First Name": "CJ", "Nickname": "CJ Miles", "Last Name": "Miles", "FPPG": "15.58636289654356", "Played": "66", "Salary": "3500", "Game": "IND@TOR", "Team": "TOR", "Opponent": "IND", "Injury INdicator": "", "Injury Details": "", "null": ["", ""]}];
-
-export default playerPool;

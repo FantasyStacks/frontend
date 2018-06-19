@@ -2,20 +2,20 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider, connect } from 'react-redux'
 
-import ReactApp from './react/app.js'
-import store from './redux/store/index.js'
-import mapStateToProps from './redux/store/stateToProps.js'
-import mapDispatchToProps from './redux/actions/index.js'
+import { App } from './react/app.js'
+import { store } from './redux/store/index.js'
+import { mapStateToProps } from './redux/store/stateToProps.js'
+import { mapDispatchToProps } from './redux/actions/index.js'
 import './index.css'
 
-const App = connect(
+const Root = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ReactApp)
+)(App)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Root />
   </Provider>,
   document.getElementById('root')
 )

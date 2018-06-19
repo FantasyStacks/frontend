@@ -1,37 +1,37 @@
 import dcopy from 'deepcopy';
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   gamesBar: mapGame(state),
   playerPool: mapPlayerPool(state),
   poolFilter: mapPoolFilter(state),
   lineup: mapLineup(state),
-  lineups: mapLineups(state) 
-});
+  lineups: mapLineups(state)
+})
 
 const mapGame = (state) => ({
   games: dcopy(state.games),
   filters: dcopy(state.filters.team)
-});
+})
 
 const mapPoolFilter = (state) => ({
   filters: dcopy(state.filters.pos)
 })
 
 const mapPosition = (state) => ({
-  filters: dcopy(state.filters.pos)  
-});
+  filters: dcopy(state.filters.pos)
+})
 
 const mapPlayerPool = (state) => {
-  const displayed = 
+  const displayed =
     state.playerPool
       .filter(
-        (player) => 
+        (player) =>
           (state.filters.pos.includes(player.Position)
           || state.filters.pos.length === 0)
-          && 
+          &&
           (state.filters.team.includes(player.Team)
           || state.filters.team.length ===0)
-  );
+  )
 
   const lineupNames = positionStrings
     .map(position => state.lineup[position])
@@ -39,13 +39,13 @@ const mapPlayerPool = (state) => {
     .map(player => player.Nickname);
 
   const withStatus = displayed.map(
-    player => 
+    player =>
       lineupNames.includes(player.Nickname)
       ? Object.assign({inLineup: true, isEditable: true}, player)
       : Object.assign({inLineup: false, isEditable: true}, player)
-  );
+  )
 
-  return withStatus;
+  return withStatus
 }
 
 const mapLineup = (state, isEditable = true) => ({
@@ -59,7 +59,7 @@ const mapLineup = (state, isEditable = true) => ({
     .map(position => state.lineup[position])
     .filter(player => player !== null)
     .reduce((total, player) => total + Number(player.FPPG), 0))
-});
+})
 
 const mapLineups = (state) => {
   return state.lineups.map(
@@ -75,8 +75,8 @@ const mapLineups = (state) => {
         .filter(player => player !== null)
         .reduce((total, player) => total + Number(player.FPPG), 0))
     })
-  ).reverse();
-};
+  ).reverse()
+}
 
 const positionStrings = [
   'pg1',
@@ -88,6 +88,4 @@ const positionStrings = [
   'pf1',
   'pf2',
   'c1'
-];
-
-export default mapStateToProps;
+]
