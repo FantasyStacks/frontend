@@ -1,35 +1,29 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from 'react'
 
-import PoolRow from './PoolRow.js';
+import { PoolRow } from './PoolRow.js'
 
-const Pool = ({ pool, addRemove }) => {
-  const renderPool = pool.map(
-    player =>
-      <PoolRow
-        player={player}
-        addRemove={addRemove}
-      />
-  )
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>POS</th>
-            <th>PLAYER</th>
-            <th>GAME</th>
-            <th>Points</th>
-            <th>SALARY</th>
-          </tr>
-        </thead>
-        <tbody>
-        {renderPool}
-        </tbody>
-      </table>
-    </div>
-  );
-};
-
-
-export default Pool;
+export const Pool = ({ pool, addRemove }) => (
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>POS</th>
+          <th>PLAYER</th>
+          <th>GAME</th>
+          <th>Points</th>
+          <th>SALARY</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          pool.map(player => (
+            <PoolRow
+              player={player}
+              addRemove={addRemove}
+            />
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+)

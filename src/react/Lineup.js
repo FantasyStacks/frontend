@@ -1,33 +1,36 @@
-import React from 'react';
-import PoolRow from './PoolRow.js';
+import React from 'react'
 
-const Lineup = ({isEditable, lineup, points, salary, addRemove}) => {
-  const renderLineup = lineupToArray(lineup, isEditable)
-    .map((player) =>
-      <PoolRow
-        addRemove={addRemove}
-        player={Object.assign(player, {inLineup: true})}
-      />);
+import { PoolRow } from './PoolRow.js'
 
-  return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-          <th>POS</th>
-          <th>PLAYER</th>
-          <th>GAME</th>
-          <th>Points</th>
-          <th>SALARY</th>
-          </tr>
-        </thead>
-        <tbody>{renderLineup}</tbody>
-      </table>
-      <div>FantasyPoints: {points}</div>
-      <div>SalaryUsed: {salary}</div>
-    </div>
-  )
-};
+export const Lineup = ({ isEditable, lineup, points, salary, addRemove }) => (
+  <div>
+    <table>
+      <thead>
+        <tr>
+        <th>POS</th>
+        <th>PLAYER</th>
+        <th>GAME</th>
+        <th>Points</th>
+        <th>SALARY</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          lineupToArray(lineup, isEditable)
+            .map((player) =>
+              <PoolRow
+                addRemove={addRemove}
+                player={Object.assign(player, {inLineup: true})}
+              />
+            )
+        }
+      </tbody>
+    </table>
+    <div>FantasyPoints: {points}</div>
+    <div>SalaryUsed: {salary}</div>
+  </div>
+)
+
 
 const positionStrings = [
   'pg1',
@@ -39,18 +42,18 @@ const positionStrings = [
   'pf1',
   'pf2',
   'c1'
-];
+]
 
 const lineupToArray = (lineup, isEditable) => {
-  let out = [];
+  let out = []
   for (let i = 0; i < positionStrings.length; i++) {
-    let position = positionStrings[i];
-    let player = lineup[position];
+    let position = positionStrings[i]
+    let player = lineup[position]
 
     if (player != null) {
-      player = Object.assign(player, {position: position});
+      player = Object.assign(player, {position: position})
       if (player !== null) {
-        player.isEditable = isEditable;
+        player.isEditable = isEditable
       }
     } else {
       player = {
@@ -61,11 +64,9 @@ const lineupToArray = (lineup, isEditable) => {
         Nickname: '',
         Game: '',
         Salary: ''
-      };
+      }
     }
-    out.push(player);
+    out.push(player)
   }
-  return out;
+  return out
 }
-
-export default Lineup;

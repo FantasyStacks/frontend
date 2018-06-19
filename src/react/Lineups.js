@@ -1,22 +1,14 @@
-import React from 'react';
-import Lineup from './Lineup.js';
+import React from 'react'
 
-const Lineups = ({lineups}) => {
-  console.log(lineups);
-  const renderLineups = lineups.map((lineup) =>
-    <Lineup
-      isEditable={false}
-      lineup={lineup.lineup}
-      points={lineup.points}
-      salary={lineup.salary}
-    />
-  );
+import { Lineup } from './Lineup.js'
 
-  return (
-    <div>
-      {renderLineups}
-    </div>
-  );
-};
-
-export default Lineups;
+export const Lineups = ({ lineups }) =>
+  lineups
+    .map(lineup => (
+      <Lineup
+        isEditable={false}
+        lineup={lineup.lineup}
+        points={lineup.points}
+        salary={lineup.salary}
+      />
+    ))
