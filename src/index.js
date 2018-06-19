@@ -1,17 +1,23 @@
-import React from 'react' 
-import { render } from 'react-dom' 
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider, connect } from 'react-redux';
 
-import './index.css' 
-import Root from './Root' 
-import configureStore from './configureStore' 
-import registerServiceWorker from './registerServiceWorker' 
+import ReactApp from './react/index.js';
+import store from './redux/store/index.js';
+import mapStateToProps from './redux/store/stateToProps.js';
+import mapDispatchToProps from './redux/actions/index.js';
+import './index.css';
 
-
-const store = configureStore()
-
-render(
-  <Root store={ store } />,
+const App = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ReactApp);
+console.log(App);
+ReactDOM.render(
+  (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  ),
   document.getElementById('root')
-)
-
-registerServiceWorker()
+);
